@@ -30,6 +30,7 @@ data "aws_ami" "amazon2" {
 resource "aws_instance" "web" {
   ami           = data.aws_ami.amazon2.id
   instance_type = var.my_instance_type
+  subnet_id = "subnet-0adcfb3ccb8217d2d"
 
   tags = {
     "Name" = "my-ec2-${local.my_local_variable}"
