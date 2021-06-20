@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 locals {
-  my_unique_name = "szhekpis"
+  my_unique_name = "spongebob"
 }
 
 resource "aws_s3_bucket" "bucket_for_each" {

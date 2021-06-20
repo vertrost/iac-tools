@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 locals {
-  my_local_variable = "foobar"
+  my_local_variable = "spongebob"
 }
 
 data "aws_ami" "amazon2" {
@@ -32,6 +32,6 @@ resource "aws_instance" "web" {
   instance_type = var.my_instance_type
 
   tags = {
-    "Name" = "my-ec2-name"
+    "Name" = "my-ec2-${local.my_local_variable}"
   }
 }
