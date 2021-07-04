@@ -1,0 +1,7 @@
+{
+    "Resources" : {
+        "HelloBucketSpongeBob" : {
+            "Type" : "AWS::S3::Bucket"
+        }
+    }
+}

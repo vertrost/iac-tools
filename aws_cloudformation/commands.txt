@@ -1,0 +1,21 @@
+export STACK_NAME=
+export CHANGE_SET_NAME=
+
+#Create stack
+aws cloudformation create-stack --stack-name $STACK_NAME --template-body file://bucket.yaml
+export STACK_ARN=
+
+#Create change-set
+aws cloudformation create-change-set --stack-name $STACK_ARN --change-set-name $CHANGE_SET_NAME --template-body file://bucket.yaml
+export CS_ARN=
+
+#View change-set
+aws cloudformation list-change-sets --stack-name $STACK_ARN
+
+aws cloudformation describe-change-set --change-set-name $CS_ARN
+
+#Execute change-set
+aws cloudformation execute-change-set --change-set-name $CS_ARN
+
+#Delete stack
+aws cloudformation delete-stack --stack-name $STACK_NAME
